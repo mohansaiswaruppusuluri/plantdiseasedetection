@@ -1,6 +1,6 @@
-gradio
-tensorflow-cpu==2.15.0
-numpy
-pillow
-gdown
-h5py
+streamlit==1.32.0
+tensorflow-cpu==2.13.0
+numpy==1.23.5
+pillow==10.0.0
+gdown==4.7.1
+h5py==3.8.0
