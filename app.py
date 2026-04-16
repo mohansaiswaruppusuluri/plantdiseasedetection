@@ -258,7 +258,11 @@ if not os.path.exists(MODEL_PATH):
         gdown.download(url, MODEL_PATH, quiet=False)
 
 # ---------------- LOAD MODEL ----------------
-model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+model = tf.keras.models.load_model(
+    MODEL_PATH,
+    compile=False,
+    safe_mode=False
+)
 
 # ---------------- LOAD CLASS INDICES ----------------
 with open("class_indices.json", "r") as f:
