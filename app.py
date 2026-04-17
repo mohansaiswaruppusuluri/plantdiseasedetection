@@ -250,20 +250,15 @@ st.set_page_config(
 )
 
 # ---------------- DOWNLOAD MODEL ----------------
-MODEL_PATH = "plant_model.h5"
+MODEL_PATH = "plant_model.keras"
 
 if not os.path.exists(MODEL_PATH):
-    url = "https://drive.google.com/uc?id=1KVw_K1TAHMU_lU95C460GzLtghvQ8swz"
-    with st.spinner("Downloading model... please wait ⏳"):
+    url = "https://drive.google.com/uc?id=1FBBBrUhNAHayDewAEAYTYDVJaBTrpsNJ"
+    with st.spinner("Downloading model..."):
         gdown.download(url, MODEL_PATH, quiet=False)
 
 # ---------------- LOAD MODEL ----------------
-model = tf.keras.models.load_model(
-    MODEL_PATH,
-    compile=False,
-    safe_mode=False
-)
-
+model = tf.keras.models.load_model(MODEL_PATH)
 # ---------------- LOAD CLASS INDICES ----------------
 with open("class_indices.json", "r") as f:
     class_indices = json.load(f)
